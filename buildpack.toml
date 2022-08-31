@@ -19,7 +19,7 @@ api = "0.7"
   homepage = "https://github.com/paketo-buildpacks/new-relic"
   id = "paketo-buildpacks/new-relic"
   keywords = ["new-relic", "agent", "apm", "java", "node.js", "php"]
-  name = "Paketo New Relic Buildpack"
+  name = "Paketo Buildpack for New Relic"
   sbom-formats = ["application/vnd.syft+json", "application/vnd.cyclonedx+json"]
   version = "{{.version}}"
 
