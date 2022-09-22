@@ -1,0 +1,3 @@
+//web: NEW_RELIC_CONFIG_FILE=newrelic.ini newrelic-admin run-program YOUR_COMMAND_OPTIONS
+//example
+web: NEW_RELIC_CONFIG_FILE=newrelic.ini newrelic-admin run-program gunicorn server:app

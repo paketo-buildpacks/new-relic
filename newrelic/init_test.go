@@ -31,5 +31,6 @@ func TestUnit(t *testing.T) {
 	suite("JavaAgent", testJavaAgent)
 	suite("NodeJSAgent", testNodeJSAgent)
 	suite("PHPAgent", testPHPAgent)
+	suite("PythonAgent", testPythonAgent)
 	suite.Run(t)
 }

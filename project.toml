@@ -1,0 +1,4 @@
+[[build.env]]
+name="NEWRELIC_PYTHON_VERSION"
+value="8.1.0.180"
+

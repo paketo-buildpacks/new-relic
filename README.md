@@ -27,6 +27,13 @@ The buildpack will do the following for PHP applications:
 * Contributes a PHP agent to a layer and configures `$PHP_INI_SCAN_DIR` to use it
 * Transforms the contents of the binding secret to environment variables with the pattern `NEW_RELIC_<KEY>=<VALUE>`
 
+The buildpack will do the following for Python applications:
+
+* Copies configuration file in /resources/newrelic.ini to the root folder of your application
+* Installs New Relic Python agent using pip3
+* Procfile is required at root of your application during build stage, sample file available /resources/Procfile
+* Choose which Python agent pip3 version by updating ./project.toml and pass --descriptor ./project.toml to your build command or use environment variables, i.e. --env NEWRELIC_PYTHON_VERSION=PYTHON_PIP3_VERSION
+
 ## Configuration
 | Environment Variable | Description
 | -------------------- | -----------
