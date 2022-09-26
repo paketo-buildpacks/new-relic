@@ -88,11 +88,7 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 	if _, ok, err := pr.Resolve("new-relic-python"); err != nil {
 		return libcnb.BuildResult{}, fmt.Errorf("unable to resolve new-relic-python plan entry\n%w", err)
 	} else if ok {
-		dep, err := dr.Resolve("new-relic-python", "")
-		if err != nil {
-			return libcnb.BuildResult{}, fmt.Errorf("unable to find dependency\n%w", err)
-		}
-		p, _ := NewPythonAgent(context.Application.Path, context.Buildpack.Path, dep, dc)
+		p := NewPythonAgent(context.Application.Path, context.Buildpack.Path)
 		p.Logger = b.Logger
 		result.Layers = append(result.Layers, p)
 	}

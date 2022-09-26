@@ -27,16 +27,13 @@ import (
 	"github.com/sclevine/spec"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/paketo-buildpacks/libpak"
-	"github.com/paketo-buildpacks/libpak/effect"
 	"github.com/paketo-buildpacks/libpak/effect/mocks"
 	"github.com/paketo-buildpacks/new-relic/v4/newrelic"
 )
 
 func testPythonAgent(t *testing.T, context spec.G, it spec.S) {
 	var (
-		Expect = NewWithT(t).Expect
-
+		Expect   = NewWithT(t).Expect
 		ctx      libcnb.BuildContext
 		executor *mocks.Executor
 	)
@@ -68,24 +65,14 @@ func testPythonAgent(t *testing.T, context spec.G, it spec.S) {
 		Expect(ioutil.WriteFile(filepath.Join(ctx.Buildpack.Path, "resources", "newrelic.ini"), []byte{}, 0644)).
 			To(Succeed())
 
-		dep := libpak.BuildpackDependency{
-			URI:    "https://localhost/stub-new-relic-agent.tgz",
-			SHA256: "e6417c651cc4d3fbc0ece8c715f8098106cda1a19036805fa4746db9f05b2e9a",
-		}
-		dc := libpak.DependencyCache{CachePath: "testdata"}
+		p := newrelic.NewPythonAgent(ctx.Application.Path, ctx.Buildpack.Path)
 
-		p, _ := newrelic.NewPythonAgent(ctx.Application.Path, ctx.Buildpack.Path, dep, dc)
-		p.Executor = executor
 		layer, err := ctx.Layers.Layer("test-layer")
 		Expect(err).NotTo(HaveOccurred())
 
-		layer, err = p.Contribute(layer)
+		_, err = p.Contribute(layer)
 		Expect(err).NotTo(HaveOccurred())
 
-		execution := executor.Calls[0].Arguments[0].(effect.Execution)
-		Expect(execution.Command).To(Equal("pip3"))
-		Expect(execution.Args).To(Equal([]string{"install", "newrelic==" + os.Getenv("NEWRELIC_PYTHON_VERSION")}))
-		Expect(layer.LaunchEnvironment["NEWRELIC_PYTHON_VERSION"]).To(Equal(os.Getenv("NEWRELIC_PYTHON_VERSION")))
 		Expect(filepath.Join(p.ApplicationPath, "newrelic.ini")).To(BeARegularFile())
 	})
 }
