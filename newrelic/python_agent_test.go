@@ -25,17 +25,14 @@ import (
 	"github.com/buildpacks/libcnb"
 	. "github.com/onsi/gomega"
 	"github.com/sclevine/spec"
-	"github.com/stretchr/testify/mock"
 
-	"github.com/paketo-buildpacks/libpak/effect/mocks"
 	"github.com/paketo-buildpacks/new-relic/v4/newrelic"
 )
 
 func testPythonAgent(t *testing.T, context spec.G, it spec.S) {
 	var (
-		Expect   = NewWithT(t).Expect
-		ctx      libcnb.BuildContext
-		executor *mocks.Executor
+		Expect = NewWithT(t).Expect
+		ctx    libcnb.BuildContext
 	)
 
 	it.Before(func() {
@@ -50,8 +47,6 @@ func testPythonAgent(t *testing.T, context spec.G, it spec.S) {
 		ctx.Layers.Path, err = ioutil.TempDir("", "python-agent-layers")
 		Expect(err).NotTo(HaveOccurred())
 
-		executor = &mocks.Executor{}
-		executor.On("Execute", mock.Anything).Return(nil)
 	})
 
 	it.After(func() {
@@ -61,6 +56,7 @@ func testPythonAgent(t *testing.T, context spec.G, it spec.S) {
 	})
 
 	it("contributes Python agent", func() {
+		Expect(os.MkdirAll(filepath.Join(ctx.Layers.Path, "/test-layer/layers/paketo-buildpacks_pip-install/packages/newrelic"), 0755)).To(Succeed())
 		Expect(os.MkdirAll(filepath.Join(ctx.Buildpack.Path, "resources"), 0755)).To(Succeed())
 		Expect(ioutil.WriteFile(filepath.Join(ctx.Buildpack.Path, "resources", "newrelic.ini"), []byte{}, 0644)).
 			To(Succeed())
@@ -73,6 +69,6 @@ func testPythonAgent(t *testing.T, context spec.G, it spec.S) {
 		_, err = p.Contribute(layer)
 		Expect(err).NotTo(HaveOccurred())
 
-		Expect(filepath.Join(p.ApplicationPath, "newrelic.ini")).To(BeARegularFile())
+		Expect(filepath.Join(p.ApplicationPath, "newrelic.ini")).To(BeAnExistingFile())
 	})
 }

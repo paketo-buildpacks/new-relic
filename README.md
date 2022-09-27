@@ -29,10 +29,9 @@ The buildpack will do the following for PHP applications:
 
 The buildpack will do the following for Python applications:
 
-* Copies configuration file in /resources/newrelic.ini to the root folder of your application
-* Installs New Relic Python agent using pip3
-* Procfile is required at root of your application during build stage, sample file available /resources/Procfile
-* Choose which Python agent pip3 version by updating ./project.toml and pass --descriptor ./project.toml to your build command or use environment variables, i.e. --env NEWRELIC_PYTHON_VERSION=PYTHON_PIP3_VERSION
+* Copies configuration file in /resources/newrelic.ini to the root folder of your application.
+* You may override this file by including a newrelic.ini file at the root of your application.
+* You will need to install the New Relic Python Agent, you can do this by adding New Relic as requirement in requirements.txt at the root of your application.
 
 ## Configuration
 | Environment Variable | Description
