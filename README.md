@@ -31,7 +31,7 @@ The buildpack will do the following for Python applications:
 
 * Copies configuration file in `${buildpack}/resources/newrelic.ini` to the root folder of your application.
 * You may override this file by including a `newrelic.ini` file at the root of your application.
-* You will need to install the New Relic Python Agent, you can do this by adding New Relic as requirement in requirements.txt at the root of your application.
+* You will need to install the New Relic Python Agent, you can do this by adding New Relic as requirement in `requirements.txt` at the root of your application.
 
 ## Configuration
 | Environment Variable | Description
