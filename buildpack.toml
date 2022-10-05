@@ -87,7 +87,6 @@ api = "0.7"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
     uri = "https://download.newrelic.com/php_agent/archive/10.1.0.313/newrelic-php5-10.1.0.313-linux.tar.gz"
     version = "10.1.0"
-  
 
     [[metadata.dependencies.licenses]]
       uri = "https://docs.newrelic.com/docs/licenses/license-information"
