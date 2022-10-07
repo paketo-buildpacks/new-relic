@@ -28,7 +28,7 @@ api = "0.7"
     uri = "https://github.com/paketo-buildpacks/new-relic/blob/main/LICENSE"
 
 [metadata]
-  include-files = ["LICENSE", "NOTICE", "README.md", "bin/build", "bin/detect", "bin/helper", "bin/main", "buildpack.toml", "resources/newrelic.js", "resources/newrelic.yml", "project.toml"]
+  include-files = ["LICENSE", "NOTICE", "README.md", "bin/build", "bin/detect", "bin/helper", "bin/main", "buildpack.toml", "resources/newrelic.js", "resources/newrelic.yml"]
   pre-package = "scripts/build.sh"
 
   [[metadata.configurations]]
@@ -66,27 +66,27 @@ api = "0.7"
       uri = "https://newrelic.com/docs/java/java-agent-license"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:newrelic:nodejs-agent:9.1.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:newrelic:nodejs-agent:9.2.0:*:*:*:*:*:*:*"]
     id = "new-relic-nodejs"
     name = "New Relic NodeJS Agent"
-    purl = "pkg:generic/newrelic-nodejs-agent@9.1.0?arch=amd64"
-    sha256 = "e159cb39dbaff9d84958744ed5928d18c0e82b6b59dbeca80d382bf213168eec"
+    purl = "pkg:generic/newrelic-nodejs-agent@9.2.0?arch=amd64"
+    sha256 = "55adbdfa049808fef8c80c0b786cc3b058c0b87d0b4b225b102820a76e7a2888"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
-    uri = "https://registry.npmjs.org/newrelic/-/newrelic-9.1.0.tgz"
-    version = "9.1.0"
+    uri = "https://registry.npmjs.org/newrelic/-/newrelic-9.2.0.tgz"
+    version = "9.2.0"
 
     [[metadata.dependencies.licenses]]
       uri = "https://github.com/newrelic/node-newrelic/blob/HEAD/LICENSE"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:appdynamics:php-agent:10.1.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:appdynamics:php-agent:10.2.0:*:*:*:*:*:*:*"]
     id = "new-relic-php"
     name = "New Relic PHP Agent"
-    purl = "pkg:generic/newrelic-php-agent@10.1.0?arch=amd64"
-    sha256 = "ce9c36b8ecd6d03a97cab59d8615f8770f1355284e3f67a833b925fe8070de4c"
+    purl = "pkg:generic/newrelic-php-agent@10.2.0?arch=amd64"
+    sha256 = "91729801dc329906345e5f6337d404df4ced19599a12a6b15b092212cae30037"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
-    uri = "https://download.newrelic.com/php_agent/archive/10.1.0.313/newrelic-php5-10.1.0.313-linux.tar.gz"
-    version = "10.1.0"
+    uri = "https://download.newrelic.com/php_agent/archive/10.2.0.314/newrelic-php5-10.2.0.314-linux.tar.gz"
+    version = "10.2.0"
 
     [[metadata.dependencies.licenses]]
       uri = "https://docs.newrelic.com/docs/licenses/license-information"
