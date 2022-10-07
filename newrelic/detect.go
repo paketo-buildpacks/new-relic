@@ -67,7 +67,7 @@ func (Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) 
 					{Name: "new-relic-python-config"},
 				},
 				Requires: []libcnb.BuildPlanRequire{
-					{Name: "new-relic-python"},
+					{Name: "new-relic-python-config"},
 					{Name: "cpython", Metadata: map[string]interface{}{"build": true}},
 				},
 			},
