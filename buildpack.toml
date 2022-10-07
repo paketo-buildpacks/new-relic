@@ -79,14 +79,14 @@ api = "0.7"
       uri = "https://github.com/newrelic/node-newrelic/blob/HEAD/LICENSE"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:appdynamics:php-agent:10.1.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:appdynamics:php-agent:10.2.0:*:*:*:*:*:*:*"]
     id = "new-relic-php"
     name = "New Relic PHP Agent"
-    purl = "pkg:generic/newrelic-php-agent@10.1.0?arch=amd64"
-    sha256 = "ce9c36b8ecd6d03a97cab59d8615f8770f1355284e3f67a833b925fe8070de4c"
+    purl = "pkg:generic/newrelic-php-agent@10.2.0?arch=amd64"
+    sha256 = "91729801dc329906345e5f6337d404df4ced19599a12a6b15b092212cae30037"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
-    uri = "https://download.newrelic.com/php_agent/archive/10.1.0.313/newrelic-php5-10.1.0.313-linux.tar.gz"
-    version = "10.1.0"
+    uri = "https://download.newrelic.com/php_agent/archive/10.2.0.314/newrelic-php5-10.2.0.314-linux.tar.gz"
+    version = "10.2.0"
 
     [[metadata.dependencies.licenses]]
       uri = "https://docs.newrelic.com/docs/licenses/license-information"
