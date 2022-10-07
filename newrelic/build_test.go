@@ -288,7 +288,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 	})
 
 	it("contributes Python agent API >= 0.7", func() {
-		ctx.Plan.Entries = append(ctx.Plan.Entries, libcnb.BuildpackPlanEntry{Name: "new-relic-python"})
+		ctx.Plan.Entries = append(ctx.Plan.Entries, libcnb.BuildpackPlanEntry{Name: "new-relic-python-config"})
 		ctx.Buildpack.API = "0.7"
 		ctx.StackID = "test-stack-id"
 
@@ -296,7 +296,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		Expect(err).NotTo(HaveOccurred())
 
 		Expect(result.Layers).To(HaveLen(2))
-		Expect(result.Layers[0].Name()).To(Equal("new-relic-python-agent"))
+		Expect(result.Layers[0].Name()).To(Equal("new-relic-python-config"))
 		Expect(result.Layers[1].Name()).To(Equal("helper"))
 		Expect(result.Layers[1].(libpak.HelperLayerContributor).Names).To(Equal([]string{"properties"}))
 	})

@@ -55,8 +55,8 @@ func testPythonAgent(t *testing.T, context spec.G, it spec.S) {
 		Expect(os.RemoveAll(ctx.Layers.Path)).To(Succeed())
 	})
 
-	it("contributes Python agent", func() {
-		Expect(os.MkdirAll(filepath.Join(ctx.Layers.Path, "/test-layer/layers/paketo-buildpacks_pip-install/packages/newrelic"), 0755)).To(Succeed())
+	it("configures Python agent", func() {
+		// TODO Expect(os.MkdirAll("/layers/newrelic/admin", 0755)).To(Succeed())
 		Expect(os.MkdirAll(filepath.Join(ctx.Buildpack.Path, "resources"), 0755)).To(Succeed())
 		Expect(ioutil.WriteFile(filepath.Join(ctx.Buildpack.Path, "resources", "newrelic.ini"), []byte{}, 0644)).
 			To(Succeed())

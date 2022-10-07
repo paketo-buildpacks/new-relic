@@ -1,7 +1,6 @@
 package newrelic
 
 import (
-	"errors"
 	"fmt"
 	"io"
 	"os"
@@ -27,41 +26,34 @@ func NewPythonAgent(applicationPath string, buildpackPath string) PythonAgent {
 }
 
 func (p PythonAgent) Contribute(layer libcnb.Layer) (libcnb.Layer, error) {
-	e := filepath.Walk(filepath.Join(layer.Path, "/layers/paketo-buildpacks_pip-install/packages/"), func(path string, info os.FileInfo, err error) error {
-		if err == nil && strings.Contains(path, "newrelic") {
+	e := filepath.Walk("/layers/", func(path string, info os.FileInfo, err error) error {
+		fmt.Println(path)
+		if err == nil && strings.Contains(path, "/newrelic/admin") {
 			return io.EOF
 		}
 		return nil
 	})
-
 	if e != io.EOF {
 		return libcnb.Layer{}, fmt.Errorf("new relic python agent not installed, check your requirementes.txt file")
 	}
-
-	file := filepath.Join(p.ApplicationPath, "newrelic.ini")
-	if _, err := os.Stat(file); err == nil {
+	config_file := filepath.Join(p.ApplicationPath, "newrelic.ini")
+	file_to_copy := filepath.Join(p.BuildpackPath, "resources", "newrelic.ini")
+	if _, err := sherpa.FileExists(config_file); err != nil {
 		return layer, nil
 
-	} else if errors.Is(err, os.ErrNotExist) {
-		file := filepath.Join(p.BuildpackPath, "resources", "newrelic.ini")
-		in, err := os.Open(file)
-		if err != nil {
-			return libcnb.Layer{}, fmt.Errorf("unable to open %s\n%w", file, err)
-		}
-		defer in.Close()
-
-		file = filepath.Join(p.ApplicationPath, "newrelic.ini")
-		if err := sherpa.CopyFile(in, file); err != nil {
-			return libcnb.Layer{}, fmt.Errorf("unable to copy %s to %s\n%w", in.Name(), file, err)
-		}
 	} else {
-		if err != nil {
-			return libcnb.Layer{}, fmt.Errorf("unable to install python agent\n%w", err)
+		if _, err := sherpa.FileExists(file_to_copy); err != nil {
+			return libcnb.Layer{}, fmt.Errorf("unable to open %s\n%w", file_to_copy, err)
+		} else {
+			in, _ := os.Open(file_to_copy)
+			if err := sherpa.CopyFile(in, config_file); err != nil {
+				return libcnb.Layer{}, fmt.Errorf("unable to copy newrelic.ini to configure New Relic Python agent\n%w", err)
+			}
 		}
 	}
 	return layer, nil
 }
 
 func (p PythonAgent) Name() string {
-	return "new-relic-python-agent"
+	return "new-relic-python-config"
 }
