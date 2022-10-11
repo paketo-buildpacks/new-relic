@@ -28,7 +28,7 @@ api = "0.7"
     uri = "https://github.com/paketo-buildpacks/new-relic/blob/main/LICENSE"
 
 [metadata]
-  include-files = include-files = ["LICENSE", "NOTICE", "README.md", "bin/build", "bin/detect", "bin/helper", "bin/main", "buildpack.toml", "resources/newrelic.js", "resources/newrelic.yml", "resources/newrelic.ini"]
+  include-files = ["LICENSE", "NOTICE", "README.md", "bin/build", "bin/detect", "bin/helper", "bin/main", "buildpack.toml", "resources/newrelic.js", "resources/newrelic.yml", "resources/newrelic.ini"]
   pre-package = "scripts/build.sh"
 
   [[metadata.configurations]]
