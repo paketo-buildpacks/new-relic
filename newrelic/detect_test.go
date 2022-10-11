@@ -80,6 +80,7 @@ func testDetect(t *testing.T, context spec.G, it spec.S) {
 					Requires: []libcnb.BuildPlanRequire{
 						{Name: "new-relic-python-config"},
 						{Name: "cpython", Metadata: map[string]interface{}{"build": true}},
+						{Name: "site-packages", Metadata: map[string]interface{}{"build": true, "launch": true}},
 					},
 				},
 			},
