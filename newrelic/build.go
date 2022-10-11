@@ -88,7 +88,7 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 	if _, ok, err := pr.Resolve("new-relic-python-config"); err != nil {
 		return libcnb.BuildResult{}, fmt.Errorf("unable to resolve new-relic-python-config plan entry\n%w", err)
 	} else if ok {
-		p := NewPythonAgent(context.Application.Path, context.Buildpack.Path)
+		p := NewPythonAgent(context.Application.Path, context.Buildpack.Path, effect.NewExecutor())
 		p.Logger = b.Logger
 		result.Layers = append(result.Layers, p)
 	}
