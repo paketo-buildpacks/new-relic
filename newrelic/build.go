@@ -22,6 +22,7 @@ import (
 	"github.com/buildpacks/libcnb"
 	"github.com/paketo-buildpacks/libpak"
 	"github.com/paketo-buildpacks/libpak/bard"
+	"github.com/paketo-buildpacks/libpak/effect"
 )
 
 type Build struct {
@@ -83,6 +84,14 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 			result.Layers = append(result.Layers, ec)
 			result.BOM.Entries = append(result.BOM.Entries, be)
 		}
+	}
+
+	if _, ok, err := pr.Resolve("new-relic-python-config"); err != nil {
+		return libcnb.BuildResult{}, fmt.Errorf("unable to resolve new-relic-python-config plan entry\n%w", err)
+	} else if ok {
+		p := NewPythonAgent(context.Application.Path, context.Buildpack.Path, effect.NewExecutor())
+		p.Logger = b.Logger
+		result.Layers = append(result.Layers, p)
 	}
 
 	if _, ok, err := pr.Resolve("new-relic-nodejs"); err != nil {

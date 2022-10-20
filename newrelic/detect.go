@@ -62,6 +62,16 @@ func (Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) 
 					{Name: "php"},
 				},
 			},
+			{
+				Provides: []libcnb.BuildPlanProvide{
+					{Name: "new-relic-python-config"},
+				},
+				Requires: []libcnb.BuildPlanRequire{
+					{Name: "new-relic-python-config"},
+					{Name: "cpython", Metadata: map[string]interface{}{"build": true}},
+					{Name: "site-packages", Metadata: map[string]interface{}{"build": true}},
+				},
+			},
 		},
 	}, nil
 }
