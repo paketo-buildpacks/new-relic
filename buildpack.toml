@@ -53,14 +53,14 @@ api = "0.7"
     name = "BP_NEW_RELIC_EXT_VERSION"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:newrelic:java-agent:7.10.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:newrelic:java-agent:7.11.0:*:*:*:*:*:*:*"]
     id = "new-relic-java"
     name = "New Relic Java Agent"
-    purl = "pkg:generic/newrelic-java-agent@7.10.0?arch=amd64"
-    sha256 = "2fe9be1c0dab22963678b47ba1e01b3286c260faab2806028dc90f0cac1b4559"
+    purl = "pkg:generic/newrelic-java-agent@7.11.0?arch=amd64"
+    sha256 = "d51b0061aec7b7cbf1031a00a1ede73723b24966c51f0f35c10c1f8efd0d7ad3"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
-    uri = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/7.10.0/newrelic-agent-7.10.0.jar"
-    version = "7.10.0"
+    uri = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/7.11.0/newrelic-agent-7.11.0.jar"
+    version = "7.11.0"
 
     [[metadata.dependencies.licenses]]
       uri = "https://newrelic.com/docs/java/java-agent-license"
