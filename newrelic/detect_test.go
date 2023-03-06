@@ -62,6 +62,7 @@ func testDetect(t *testing.T, context spec.G, it spec.S) {
 					Requires: []libcnb.BuildPlanRequire{
 						{Name: "new-relic-nodejs"},
 						{Name: "node", Metadata: map[string]interface{}{"build": true}},
+						{Name: "node_modules"},
 					},
 				},
 				{
