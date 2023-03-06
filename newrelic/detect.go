@@ -51,6 +51,7 @@ func (Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) 
 				Requires: []libcnb.BuildPlanRequire{
 					{Name: "new-relic-nodejs"},
 					{Name: "node", Metadata: map[string]interface{}{"build": true}},
+					{Name: "node_modules"},
 				},
 			},
 			{
