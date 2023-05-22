@@ -21,14 +21,18 @@ import (
 
 	"github.com/buildpacks/libcnb"
 	"github.com/paketo-buildpacks/libpak/bindings"
+	"github.com/paketo-buildpacks/libpak/bard"
 )
 
-type Detect struct{}
+type Detect struct{
+	Logger bard.Logger
+}
 
-func (Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) {
+func (d Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) {
 	if _, ok, err := bindings.ResolveOne(context.Platform.Bindings, bindings.OfType("NewRelic")); err != nil {
 		return libcnb.DetectResult{}, fmt.Errorf("unable to resolve binding NewRelic\n%w", err)
 	} else if !ok {
+		d.Logger.Info("SKIPPED: No binding of type 'NewRelic' found")
 		return libcnb.DetectResult{Pass: false}, nil
 	}
 
