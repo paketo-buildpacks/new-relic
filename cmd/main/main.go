@@ -26,8 +26,9 @@ import (
 )
 
 func main() {
+	logger := bard.NewLogger(os.Stdout)
 	libpak.Main(
-		newrelic.Detect{},
-		newrelic.Build{Logger: bard.NewLogger(os.Stdout)},
+		newrelic.Detect{Logger: logger},
+		newrelic.Build{Logger: logger},
 	)
 }
