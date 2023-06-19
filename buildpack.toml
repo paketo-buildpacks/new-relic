@@ -18,7 +18,7 @@ api = "0.7"
   description = "A Cloud Native Buildpack that contributes the New Relic Agent and configures it to connect to the service"
   homepage = "https://github.com/paketo-buildpacks/new-relic"
   id = "paketo-buildpacks/new-relic"
-  keywords = ["new-relic", "agent", "apm", "java", "node.js", "php", "python"]
+  keywords = ["new-relic", "agent", "apm", "java", "node.js", "php", "python", "dotnet"]
   name = "Paketo Buildpack for New Relic"
   sbom-formats = ["application/vnd.syft+json", "application/vnd.cyclonedx+json"]
   version = "{{.version}}"
@@ -90,6 +90,20 @@ api = "0.7"
 
     [[metadata.dependencies.licenses]]
       uri = "https://docs.newrelic.com/docs/licenses/license-information"
+
+  [[metadata.dependencies]]
+    cpes = ["cpe:2.3:a:appdynamics:dotnet-agent:10.11.0:*:*:*:*:*:*:*"]
+    id = "new-relic-dotnet"
+    name = "New Relic Dotnet Agent"
+    purl = "pkg:generic/newrelic-dotnet-agent@10.11.0?arch=amd64"
+    sha256 = "8a00aac013ea551b2f34e85dba2f9d5b097caf75e236eac45e26fbcb6d929d43"
+    stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
+    uri = "https://download.newrelic.com/dot_net_agent/latest_release/newrelic-dotnet-agent_10.11.0_amd64.tar.gz"
+    version = "10.11.0"
+
+    [[metadata.dependencies.licenses]]
+      uri = "https://docs.newrelic.com/docs/licenses/license-information"
+
 
 [[stacks]]
   id = "io.buildpacks.stacks.bionic"

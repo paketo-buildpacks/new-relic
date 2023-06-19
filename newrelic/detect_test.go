@@ -76,6 +76,15 @@ func testDetect(t *testing.T, context spec.G, it spec.S) {
 				},
 				{
 					Provides: []libcnb.BuildPlanProvide{
+						{Name: "new-relic-dotnet"},
+					},
+					Requires: []libcnb.BuildPlanRequire{
+						{Name: "new-relic-dotnet"},
+						{Name: "dotnet-core-aspnet-runtime"},
+					},
+				},
+				{
+					Provides: []libcnb.BuildPlanProvide{
 						{Name: "new-relic-python-config"},
 					},
 					Requires: []libcnb.BuildPlanRequire{
