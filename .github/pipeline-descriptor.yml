@@ -34,3 +34,7 @@ dependencies:
   uses: docker://ghcr.io/paketo-buildpacks/actions/new-relic-dependency:main
   with:
     type: php
+- id:   new-relic-dotnet
+  uses: docker://ghcr.io/paketo-buildpacks/actions/new-relic-dependency:main
+  with:
+    type: dotnet

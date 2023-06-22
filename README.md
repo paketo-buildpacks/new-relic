@@ -33,6 +33,13 @@ The buildpack will do the following for Python applications:
 * You may override this file by including a `newrelic.ini` file at the root of your application.
 * You will need to install the New Relic Python Agent, you can do this by adding New Relic as requirement in `requirements.txt` at the root of your application.
 
+The buildpack will do the following for Dotnet (.NET) Core applications:
+
+* Contributes a Dotnet agent to a layer and configures `$CORECLR_NEWRELIC_HOME` & `$CORECLR_PROFILER_PATH` to use it
+* You can override the default global `newrelic.config` file with an app-local file containing custom configuration. See the new-relic [docs](https://docs.newrelic.com/docs/apm/agents/net-agent/configuration/net-agent-configuration/#config-options-precedence) for config precedence information.
+* Transforms the contents of the binding secret to environment variables with the pattern `NEW_RELIC_<KEY>=<VALUE>`
+
+
 ## Configuration
 | Environment Variable | Description
 | -------------------- | -----------

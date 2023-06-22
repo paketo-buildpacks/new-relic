@@ -69,6 +69,15 @@ func (d Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error
 			},
 			{
 				Provides: []libcnb.BuildPlanProvide{
+					{Name: "new-relic-dotnet"},
+				},
+				Requires: []libcnb.BuildPlanRequire{
+					{Name: "new-relic-dotnet"},
+					{Name: "dotnet-core-aspnet-runtime"},
+				},
+			},
+			{
+				Provides: []libcnb.BuildPlanProvide{
 					{Name: "new-relic-python-config"},
 				},
 				Requires: []libcnb.BuildPlanRequire{
