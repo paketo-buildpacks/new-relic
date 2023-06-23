@@ -104,7 +104,6 @@ api = "0.7"
     [[metadata.dependencies.licenses]]
       uri = "https://docs.newrelic.com/docs/licenses/license-information"
 
-
 [[stacks]]
   id = "io.buildpacks.stacks.bionic"
 
