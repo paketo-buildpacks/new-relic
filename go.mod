@@ -3,7 +3,7 @@ module github.com/paketo-buildpacks/new-relic/v4
 go 1.20
 
 require (
-	github.com/buildpacks/libcnb v1.28.0
+	github.com/buildpacks/libcnb v1.29.0
 	github.com/onsi/gomega v1.27.8
 	github.com/paketo-buildpacks/libpak v1.66.1
 	github.com/sclevine/spec v1.4.0
@@ -25,8 +25,8 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/stretchr/objx v0.5.0 // indirect
 	github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8 // indirect
-	golang.org/x/net v0.11.0 // indirect
-	golang.org/x/sys v0.9.0 // indirect
-	golang.org/x/text v0.10.0 // indirect
+	golang.org/x/net v0.12.0 // indirect
+	golang.org/x/sys v0.10.0 // indirect
+	golang.org/x/text v0.11.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
