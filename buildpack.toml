@@ -66,14 +66,14 @@ api = "0.7"
       uri = "https://newrelic.com/docs/java/java-agent-license"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:newrelic:nodejs-agent:10.4.1:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:newrelic:nodejs-agent:10.4.2:*:*:*:*:*:*:*"]
     id = "new-relic-nodejs"
     name = "New Relic NodeJS Agent"
-    purl = "pkg:generic/newrelic-nodejs-agent@10.4.1?arch=amd64"
-    sha256 = "bdf0020db990721beaf400081171d63eedcbdc50048b54e221adacbb4d20ec64"
+    purl = "pkg:generic/newrelic-nodejs-agent@10.4.2?arch=amd64"
+    sha256 = "ba18f34e13fed60bea8978ed2f663684ef4227267246bc9a918a699d98a92034"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
-    uri = "https://registry.npmjs.org/newrelic/-/newrelic-10.4.1.tgz"
-    version = "10.4.1"
+    uri = "https://registry.npmjs.org/newrelic/-/newrelic-10.4.2.tgz"
+    version = "10.4.2"
 
     [[metadata.dependencies.licenses]]
       uri = "https://github.com/newrelic/node-newrelic/blob/HEAD/LICENSE"
