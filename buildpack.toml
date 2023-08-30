@@ -92,14 +92,14 @@ api = "0.7"
       uri = "https://docs.newrelic.com/docs/licenses/license-information"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:appdynamics:dotnet-agent:10.14.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:appdynamics:dotnet-agent:10.15.0:*:*:*:*:*:*:*"]
     id = "new-relic-dotnet"
     name = "New Relic Dotnet Agent"
-    purl = "pkg:generic/newrelic-dotnet-agent@10.14.0?arch=amd64"
-    sha256 = "f3607c0a7c8f1b048bfb4273189343e0abc46b3712d1601041af512a4462bc7d"
+    purl = "pkg:generic/newrelic-dotnet-agent@10.15.0?arch=amd64"
+    sha256 = "1df8ff60780ae05d56277a9414da0c1c2a436c56c864e5e5959706d1323e84f5"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
-    uri = "https://download.newrelic.com/dot_net_agent/previous_releases/10.14.0/newrelic-dotnet-agent_10.14.0_amd64.tar.gz"
-    version = "10.14.0"
+    uri = "https://download.newrelic.com/dot_net_agent/previous_releases/10.15.0/newrelic-dotnet-agent_10.15.0_amd64.tar.gz"
+    version = "10.15.0"
 
     [[metadata.dependencies.licenses]]
       uri = "https://docs.newrelic.com/docs/licenses/license-information"
