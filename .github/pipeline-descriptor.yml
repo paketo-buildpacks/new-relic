@@ -26,6 +26,7 @@ dependencies:
     uri:         https://repo1.maven.org/maven2
     group_id:    com.newrelic.agent.java
     artifact_id: newrelic-agent
+    source_classifier: sources
 - id:   new-relic-nodejs
   uses: docker://ghcr.io/paketo-buildpacks/actions/npm-dependency:main
   with:
