@@ -58,6 +58,8 @@ api = "0.7"
     name = "New Relic Java Agent"
     purl = "pkg:generic/newrelic-java-agent@8.6.0?arch=amd64"
     sha256 = "c811262ccea086991a8581ff802b504316eba1fd99d0a073bd682f61563e6d8a"
+    source = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/8.6.0/newrelic-agent-8.6.0-sources.jar"
+    source-sha256 = "92cd6761a5478a478166f4be6b80a619418af0b4d10425d85f96481fcf87a791"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
     uri = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/8.6.0/newrelic-agent-8.6.0.jar"
     version = "8.6.0"
