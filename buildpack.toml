@@ -97,6 +97,8 @@ api = "0.7"
     name = "New Relic Dotnet Agent"
     purl = "pkg:generic/newrelic-dotnet-agent@10.17.0?arch=amd64"
     sha256 = "26ee53058e7ab044ff896f9641c6592c37f5adfe5d7c809b7decdb0d0714ffb8"
+    source = "https://github.com/newrelic/newrelic-dotnet-agent/archive/refs/tags/v10.17.0.tar.gz"
+    source-sha256 = "a63b1464bc4de67fc06fc14bb64498c7ba4ace60d6285257a925da3209a59f1a"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
     uri = "https://download.newrelic.com/dot_net_agent/previous_releases/10.17.0/newrelic-dotnet-agent_10.17.0_amd64.tar.gz"
     version = "10.17.0"
