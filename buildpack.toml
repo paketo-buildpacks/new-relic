@@ -68,16 +68,16 @@ api = "0.7"
       uri = "https://newrelic.com/docs/java/java-agent-license"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:newrelic:nodejs-agent:11.7.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:newrelic:nodejs-agent:11.8.0:*:*:*:*:*:*:*"]
     id = "new-relic-nodejs"
     name = "New Relic NodeJS Agent"
-    purl = "pkg:generic/newrelic-nodejs-agent@11.7.0?arch=amd64"
-    sha256 = "a04a38bda89ce891a4e95113416d3b3efc79fec54b319dbae4a842a4150900f1"
-    source = "https://registry.npmjs.org/newrelic/-/newrelic-11.7.0.tgz"
-    source-sha256 = "a04a38bda89ce891a4e95113416d3b3efc79fec54b319dbae4a842a4150900f1"
+    purl = "pkg:generic/newrelic-nodejs-agent@11.8.0?arch=amd64"
+    sha256 = "69408532e4dc5e20719728a665b2b7df14acb9d53e3b29ed350970769cc17d4a"
+    source = "https://registry.npmjs.org/newrelic/-/newrelic-11.8.0.tgz"
+    source-sha256 = "69408532e4dc5e20719728a665b2b7df14acb9d53e3b29ed350970769cc17d4a"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
-    uri = "https://registry.npmjs.org/newrelic/-/newrelic-11.7.0.tgz"
-    version = "11.7.0"
+    uri = "https://registry.npmjs.org/newrelic/-/newrelic-11.8.0.tgz"
+    version = "11.8.0"
 
     [[metadata.dependencies.licenses]]
       uri = "https://github.com/newrelic/node-newrelic/blob/HEAD/LICENSE"
