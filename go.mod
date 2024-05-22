@@ -1,6 +1,6 @@
 module github.com/paketo-buildpacks/new-relic/v4
 
-go 1.20
+go 1.22
 
 require (
 	github.com/buildpacks/libcnb v1.30.3
