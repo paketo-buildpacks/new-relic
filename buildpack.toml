@@ -1,4 +1,4 @@
-# Copyright 2018-2022 the original author or authors.
+# Copyright 2018-2024 the original author or authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ api = "0.7"
     uri = "https://github.com/paketo-buildpacks/new-relic/blob/main/LICENSE"
 
 [metadata]
-  include-files = ["LICENSE", "NOTICE", "README.md", "bin/build", "bin/detect", "bin/helper", "bin/main", "buildpack.toml", "resources/newrelic.js", "resources/newrelic.yml", "resources/newrelic.ini"]
+  include-files = ["LICENSE", "NOTICE", "README.md", "linux/amd64/bin/build", "linux/amd64/bin/detect", "linux/amd64/bin/main", "linux/amd64/bin/helper", "linux/arm64/bin/build", "linux/arm64/bin/detect", "linux/arm64/bin/main", "linux/arm64/bin/helper", "buildpack.toml", "resources/newrelic.js", "resources/newrelic.yml", "resources/newrelic.ini"]
   pre-package = "scripts/build.sh"
 
   [[metadata.configurations]]
@@ -56,11 +56,11 @@ api = "0.7"
     cpes = ["cpe:2.3:a:newrelic:java-agent:8.11.1:*:*:*:*:*:*:*"]
     id = "new-relic-java"
     name = "New Relic Java Agent"
-    purl = "pkg:generic/newrelic-java-agent@8.11.1?arch=amd64"
+    purl = "pkg:generic/newrelic-java-agent@8.11.1"
     sha256 = "53b902787cb54163f070a7cec6f240f5ba8a91978cc527c47f90dd12c0ba989d"
     source = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/8.11.1/newrelic-agent-8.11.1-sources.jar"
     source-sha256 = "132a7512f7b40a6171f073a188ff2fb0472cc39c4b4e88caa812226d9e2482ef"
-    stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
+    stacks = ["*"]
     uri = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/8.11.1/newrelic-agent-8.11.1.jar"
     version = "8.11.1"
 
@@ -75,7 +75,7 @@ api = "0.7"
     sha256 = "43f699df59fcf39aae0666995a555fc1206c9ec6c34af6bf5771a6ec22bdbf31"
     source = "https://registry.npmjs.org/newrelic/-/newrelic-11.17.0.tgz"
     source-sha256 = "43f699df59fcf39aae0666995a555fc1206c9ec6c34af6bf5771a6ec22bdbf31"
-    stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
+    stacks = ["*"]
     uri = "https://registry.npmjs.org/newrelic/-/newrelic-11.17.0.tgz"
     version = "11.17.0"
 
@@ -90,7 +90,7 @@ api = "0.7"
     sha256 = "e840111f3c4122745cc0ee4e656aab3774b6733373be5db01c404dc2bae855c4"
     source = "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v10.21.0.11.tar.gz"
     source-sha256 = "36677b1a5af4ecfa7d82e08805ba7c705081f0989d7c7aa8d1443aa516863b35"
-    stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
+    stacks = ["*"]
     uri = "https://download.newrelic.com/php_agent/archive/10.21.0.11/newrelic-php5-10.21.0.11-linux.tar.gz"
     version = "10.21.0"
 
@@ -105,7 +105,7 @@ api = "0.7"
     sha256 = "464558e58c040f00e0ea75da535e797b71d3c66ed7dbf5c177d9a720649cef82"
     source = "https://github.com/newrelic/newrelic-dotnet-agent/archive/refs/tags/v10.24.0.tar.gz"
     source-sha256 = "bf6f652cea60fc5bffffb1bb4b58df490b95b0affa052c462f540f3abb61c5f4"
-    stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
+    stacks = ["*"]
     uri = "https://download.newrelic.com/dot_net_agent/previous_releases/10.24.0/newrelic-dotnet-agent_10.24.0_amd64.tar.gz"
     version = "10.24.0"
 
@@ -113,10 +113,12 @@ api = "0.7"
       uri = "https://docs.newrelic.com/docs/licenses/license-information"
 
 [[stacks]]
-  id = "io.buildpacks.stacks.bionic"
-
-[[stacks]]
-  id = "io.paketo.stacks.tiny"
-
-[[stacks]]
   id = "*"
+
+[[targets]]
+  arch = "amd64"
+  os = "linux"
+
+[[targets]]
+  arch = "arm64"
+  os = "linux"
