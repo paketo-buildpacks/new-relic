@@ -53,31 +53,31 @@ api = "0.7"
     name = "BP_NEW_RELIC_EXT_VERSION"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:newrelic:java-agent:8.13.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:newrelic:java-agent:8.14.0:*:*:*:*:*:*:*"]
     id = "new-relic-java"
     name = "New Relic Java Agent"
-    purl = "pkg:generic/newrelic-java-agent@8.13.0"
-    sha256 = "1b612bc188161d726597ffe744db1ad6cefedbfe0fbfb4cfa2d408cfcaee21e9"
-    source = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/8.13.0/newrelic-agent-8.13.0-sources.jar"
-    source-sha256 = "0deb91d3c226803454f3c6e6a19391d37ca6c585236a9adf13ab8ac0ce846168"
+    purl = "pkg:generic/newrelic-java-agent@8.14.0"
+    sha256 = "30a48502cbaeda36954b06559b484de96506ada6a525fe57ef6bbba72fa7d106"
+    source = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/8.14.0/newrelic-agent-8.14.0-sources.jar"
+    source-sha256 = "59836927b49225de22d4ec839d0aec99b87f1309ede087e897f48b16e6d858ad"
     stacks = ["*"]
-    uri = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/8.13.0/newrelic-agent-8.13.0.jar"
-    version = "8.13.0"
+    uri = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/8.14.0/newrelic-agent-8.14.0.jar"
+    version = "8.14.0"
 
     [[metadata.dependencies.licenses]]
       uri = "https://newrelic.com/docs/java/java-agent-license"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:newrelic:nodejs-agent:12.0.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:newrelic:nodejs-agent:12.2.0:*:*:*:*:*:*:*"]
     id = "new-relic-nodejs"
     name = "New Relic NodeJS Agent"
-    purl = "pkg:generic/newrelic-nodejs-agent@12.0.0?arch=amd64"
-    sha256 = "77125d07d6cadf8b27ed5e8700eb6a9de9a69800cc8aace860ac4782f392c729"
-    source = "https://registry.npmjs.org/newrelic/-/newrelic-12.0.0.tgz"
-    source-sha256 = "77125d07d6cadf8b27ed5e8700eb6a9de9a69800cc8aace860ac4782f392c729"
+    purl = "pkg:generic/newrelic-nodejs-agent@12.2.0?arch=amd64"
+    sha256 = "65c9a5a8d8698cc496e78e4f010e84687d739b1c0b41d80b19a1de700bc1f900"
+    source = "https://registry.npmjs.org/newrelic/-/newrelic-12.2.0.tgz"
+    source-sha256 = "65c9a5a8d8698cc496e78e4f010e84687d739b1c0b41d80b19a1de700bc1f900"
     stacks = ["*"]
-    uri = "https://registry.npmjs.org/newrelic/-/newrelic-12.0.0.tgz"
-    version = "12.0.0"
+    uri = "https://registry.npmjs.org/newrelic/-/newrelic-12.2.0.tgz"
+    version = "12.2.0"
 
     [[metadata.dependencies.licenses]]
       uri = "https://github.com/newrelic/node-newrelic/blob/HEAD/LICENSE"
@@ -98,16 +98,16 @@ api = "0.7"
       uri = "https://docs.newrelic.com/docs/licenses/license-information"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:appdynamics:dotnet-agent:10.28.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:appdynamics:dotnet-agent:10.29.0:*:*:*:*:*:*:*"]
     id = "new-relic-dotnet"
     name = "New Relic Dotnet Agent"
-    purl = "pkg:generic/newrelic-dotnet-agent@10.28.0?arch=amd64"
-    sha256 = "8aeb38a6d6332c62542b80752a233469dafb556f4f98df90a6f0121978e61509"
-    source = "https://github.com/newrelic/newrelic-dotnet-agent/archive/refs/tags/v10.28.0.tar.gz"
-    source-sha256 = "ae58221f24a73254cb29dc3f9eb939e97ac77f72ddd982a848ead4559f2eed97"
+    purl = "pkg:generic/newrelic-dotnet-agent@10.29.0?arch=amd64"
+    sha256 = "42404a1c5d04e70da83f3357100221d1fe346a1f440fb28be43f0e83ce32ad60"
+    source = "https://github.com/newrelic/newrelic-dotnet-agent/archive/refs/tags/v10.29.0.tar.gz"
+    source-sha256 = "21fcaa5a46c216bc22116c76ac8fedcdd88716c99b0b6bfc7b6335ec8796da23"
     stacks = ["*"]
-    uri = "https://download.newrelic.com/dot_net_agent/previous_releases/10.28.0/newrelic-dotnet-agent_10.28.0_amd64.tar.gz"
-    version = "10.28.0"
+    uri = "https://download.newrelic.com/dot_net_agent/previous_releases/10.29.0/newrelic-dotnet-agent_10.29.0_amd64.tar.gz"
+    version = "10.29.0"
 
     [[metadata.dependencies.licenses]]
       uri = "https://docs.newrelic.com/docs/licenses/license-information"
