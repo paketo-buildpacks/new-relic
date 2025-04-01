@@ -1,4 +1,4 @@
-# `docker.io/paketobuildpacks/new-relic`
+# `paketobuildpacks/new-relic`
 The Paketo Buildpack for New Relic is a Cloud Native Buildpack that contributes the [New Relic][n] Agent and configures it to connect to the service.
 
 [n]: https://newrelic.com
