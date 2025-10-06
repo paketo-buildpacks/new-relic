@@ -94,20 +94,6 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 		result.Layers = append(result.Layers, p)
 	}
 
-	if _, ok, err := pr.Resolve("new-relic-nodejs"); err != nil {
-		return libcnb.BuildResult{}, fmt.Errorf("unable to resolve new-relic-nodejs plan entry\n%w", err)
-	} else if ok {
-		dep, err := dr.Resolve("new-relic-nodejs", "")
-		if err != nil {
-			return libcnb.BuildResult{}, fmt.Errorf("unable to find dependency\n%w", err)
-		}
-
-		na, be := NewNodeJSAgent(context.Application.Path, context.Buildpack.Path, dep, dc)
-		na.Logger = b.Logger
-		result.Layers = append(result.Layers, na)
-		result.BOM.Entries = append(result.BOM.Entries, be)
-	}
-
 	if _, ok, err := pr.Resolve("new-relic-php"); err != nil {
 		return libcnb.BuildResult{}, fmt.Errorf("unable to resolve new-relic-php plan entry\n%w", err)
 	} else if ok {
