@@ -27,10 +27,6 @@ dependencies:
     group_id:    com.newrelic.agent.java
     artifact_id: newrelic-agent
     source_classifier: sources
-- id:   new-relic-nodejs
-  uses: docker://ghcr.io/paketo-buildpacks/actions/npm-dependency:main
-  with:
-    package: newrelic
 - id:   new-relic-php
   uses: docker://ghcr.io/paketo-buildpacks/actions/new-relic-dependency:main
   with:

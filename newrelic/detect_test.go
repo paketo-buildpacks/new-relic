@@ -57,16 +57,6 @@ func testDetect(t *testing.T, context spec.G, it spec.S) {
 				},
 				{
 					Provides: []libcnb.BuildPlanProvide{
-						{Name: "new-relic-nodejs"},
-					},
-					Requires: []libcnb.BuildPlanRequire{
-						{Name: "new-relic-nodejs"},
-						{Name: "node", Metadata: map[string]interface{}{"build": true}},
-						{Name: "node_modules"},
-					},
-				},
-				{
-					Provides: []libcnb.BuildPlanProvide{
 						{Name: "new-relic-php"},
 					},
 					Requires: []libcnb.BuildPlanRequire{
