@@ -68,16 +68,16 @@ api = "0.7"
       uri = "https://newrelic.com/docs/java/java-agent-license"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:appdynamics:php-agent:12.8.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:appdynamics:php-agent:12.9.0:*:*:*:*:*:*:*"]
     id = "new-relic-php"
     name = "New Relic PHP Agent"
-    purl = "pkg:generic/newrelic-php-agent@12.8.0?arch=amd64"
-    sha256 = "46007287ab8016bd2523a0d1339e029855d23b9d5a0c49f7b6821bef72a7b7f3"
-    source = "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v12.8.0.37.tar.gz"
-    source-sha256 = "0fe3a49170310cda15099d79b9ed6424cc653656f8c8df9309b56edcd3798e31"
+    purl = "pkg:generic/newrelic-php-agent@12.9.0?arch=amd64"
+    sha256 = "65cc8abdb4a1b07f8fea3d3279e78063f147994817385103eedf29c30d2f0a64"
+    source = "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v12.9.0.38.tar.gz"
+    source-sha256 = "f3a90afd9a9fbb380d953f3a6fff7a4ce14231f8077c61f0794d17027d2f2d69"
     stacks = ["*"]
-    uri = "https://download.newrelic.com/php_agent/archive/12.8.0.37/newrelic-php5-12.8.0.37-linux.tar.gz"
-    version = "12.8.0"
+    uri = "https://download.newrelic.com/php_agent/archive/12.9.0.38/newrelic-php5-12.9.0.38-linux.tar.gz"
+    version = "12.9.0"
 
     [[metadata.dependencies.licenses]]
       uri = "https://docs.newrelic.com/docs/licenses/license-information"
