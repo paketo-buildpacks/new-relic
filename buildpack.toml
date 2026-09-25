@@ -53,16 +53,16 @@ api = "0.7"
     name = "BP_NEW_RELIC_EXT_VERSION"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:newrelic:java-agent:9.4.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:newrelic:java-agent:9.5.0:*:*:*:*:*:*:*"]
     id = "new-relic-java"
     name = "New Relic Java Agent"
-    purl = "pkg:generic/newrelic-java-agent@9.4.0"
-    sha256 = "1f8f42d25e6565a1a7088543deeeefacdd2b028761ac94743dd1715cf7ddf5f4"
-    source = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/9.4.0/newrelic-agent-9.4.0-sources.jar"
-    source-sha256 = "66fb5084eec1aa89a6e3c7897f9b6b056ce59744ad2e801eb54abfac69e09430"
+    purl = "pkg:generic/newrelic-java-agent@9.5.0"
+    sha256 = "411587286dbb83b06fcdd042ad1c9c1818655831366717aef3611962ea2c1b73"
+    source = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/9.5.0/newrelic-agent-9.5.0-sources.jar"
+    source-sha256 = "6a586360e96f9ee24bb38670cadd43d7da4ee7eb708fc6e94658ee7f49972a3b"
     stacks = ["*"]
-    uri = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/9.4.0/newrelic-agent-9.4.0.jar"
-    version = "9.4.0"
+    uri = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/9.5.0/newrelic-agent-9.5.0.jar"
+    version = "9.5.0"
 
     [[metadata.dependencies.licenses]]
       uri = "https://newrelic.com/docs/java/java-agent-license"
