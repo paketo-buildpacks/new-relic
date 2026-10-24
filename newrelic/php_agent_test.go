@@ -18,7 +18,6 @@ package newrelic_test
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"testing"
@@ -41,7 +40,7 @@ func testPHPAgent(t *testing.T, context spec.G, it spec.S) {
 	it.Before(func() {
 		var err error
 
-		ctx.Layers.Path, err = ioutil.TempDir("", "php-agent-layers")
+		ctx.Layers.Path, err = os.MkdirTemp("", "php-agent-layers")
 		Expect(err).NotTo(HaveOccurred())
 	})
 
@@ -65,7 +64,7 @@ func testPHPAgent(t *testing.T, context spec.G, it spec.S) {
 
 		Expect(layer.Launch).To(BeTrue())
 		Expect(filepath.Join(layer.Path, "fixture-marker")).To(BeARegularFile())
-		Expect(ioutil.ReadFile(filepath.Join(layer.Path, "php.ini.d", "newrelic.ini"))).To(Equal([]byte(fmt.Sprintf(`extension = %[1]s/agent/x64/newrelic-${PHP_API}.so
+		Expect(os.ReadFile(filepath.Join(layer.Path, "php.ini.d", "newrelic.ini"))).To(Equal([]byte(fmt.Sprintf(`extension = %[1]s/agent/x64/newrelic-${PHP_API}.so
 
 [newrelic]
 newrelic.appname = ${NEW_RELIC_APP_NAME}

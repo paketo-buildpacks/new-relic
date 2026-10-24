@@ -32,8 +32,8 @@ type DotnetAgent struct {
 	Logger           bard.Logger
 }
 
-func NewDotnetAgent(dependency libpak.BuildpackDependency, cache libpak.DependencyCache) (DotnetAgent, libcnb.BOMEntry) {
-	contributor, entry := libpak.NewDependencyLayer(dependency, cache, libcnb.LayerTypes{
+func NewDotnetAgent(dependency libpak.BuildpackDependency, cache libpak.DependencyCache) (DotnetAgent, libcnb.BOMEntry) { //nolint:staticcheck // hold off on the BOM migration for now
+	contributor, entry := libpak.NewDependencyLayer(dependency, cache, libcnb.LayerTypes{ //nolint:staticcheck // hold off on the BOM migration for now
 		Launch: true,
 	})
 	return DotnetAgent{
@@ -47,7 +47,7 @@ func (d DotnetAgent) Contribute(layer libcnb.Layer) (libcnb.Layer, error) {
 	layer, err := d.LayerContributor.Contribute(layer, func(artifact *os.File) (libcnb.Layer, error) {
 		d.Logger.Bodyf("Expanding to %s", layer.Path)
 
-		if err := crush.ExtractTarGz(artifact, layer.Path, 1); err != nil {
+		if err := crush.Extract(artifact, layer.Path, 1); err != nil { //nolint:staticcheck // hold off on the BOM migration for now
 			return libcnb.Layer{}, fmt.Errorf("unable to expand New Relic\n%w", err)
 		}
 

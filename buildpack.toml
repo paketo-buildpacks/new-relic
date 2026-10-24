@@ -28,8 +28,8 @@ api = "0.7"
     uri = "https://github.com/paketo-buildpacks/new-relic/blob/main/LICENSE"
 
 [metadata]
-  include-files = ["LICENSE", "NOTICE", "README.md", "linux/amd64/bin/build", "linux/amd64/bin/detect", "linux/amd64/bin/main", "linux/amd64/bin/helper", "linux/arm64/bin/build", "linux/arm64/bin/detect", "linux/arm64/bin/main", "linux/arm64/bin/helper", "buildpack.toml", "resources/newrelic.yml", "resources/newrelic.ini"]
-  pre-package = "scripts/build.sh"
+  include-files = ["LICENSE", "NOTICE", "README.md", "linux/amd64/bin/build", "linux/amd64/bin/detect", "linux/amd64/bin/run", "linux/amd64/bin/helper", "linux/arm64/bin/build", "linux/arm64/bin/detect", "linux/arm64/bin/run", "linux/arm64/bin/helper", "buildpack.toml", "resources/newrelic.yml", "resources/newrelic.ini"]
+  pre-package = "scripts/build.sh --target linux/amd64 --target linux/arm64"
 
   [[metadata.configurations]]
     build = true
@@ -53,13 +53,14 @@ api = "0.7"
     name = "BP_NEW_RELIC_EXT_VERSION"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:newrelic:java-agent:9.5.0:*:*:*:*:*:*:*"]
+    checksum = "sha256:411587286dbb83b06fcdd042ad1c9c1818655831366717aef3611962ea2c1b73"
+    cpe = "cpe:2.3:a:newrelic:java-agent:9.5.0:*:*:*:*:*:*:*"
     id = "new-relic-java"
     name = "New Relic Java Agent"
     purl = "pkg:generic/newrelic-java-agent@9.5.0"
     sha256 = "411587286dbb83b06fcdd042ad1c9c1818655831366717aef3611962ea2c1b73"
     source = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/9.5.0/newrelic-agent-9.5.0-sources.jar"
-    source-sha256 = "6a586360e96f9ee24bb38670cadd43d7da4ee7eb708fc6e94658ee7f49972a3b"
+    source-checksum = "sha256:6a586360e96f9ee24bb38670cadd43d7da4ee7eb708fc6e94658ee7f49972a3b"
     stacks = ["*"]
     uri = "https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/9.5.0/newrelic-agent-9.5.0.jar"
     version = "9.5.0"
@@ -68,13 +69,14 @@ api = "0.7"
       uri = "https://newrelic.com/docs/java/java-agent-license"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:appdynamics:php-agent:12.11.0:*:*:*:*:*:*:*"]
+    checksum = "sha256:7e747da48ef87ef14b612a33487ec420008e1589a78a54d1e107c2e7590ad339"
+    cpe = "cpe:2.3:a:appdynamics:php-agent:12.11.0:*:*:*:*:*:*:*"
     id = "new-relic-php"
     name = "New Relic PHP Agent"
     purl = "pkg:generic/newrelic-php-agent@12.11.0?arch=amd64"
     sha256 = "7e747da48ef87ef14b612a33487ec420008e1589a78a54d1e107c2e7590ad339"
     source = "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v12.11.0.40.tar.gz"
-    source-sha256 = "1d14f9b4e295d5d0dc3dd21f5d713359d1148dda72c0edb124f193ebe076fbc9"
+    source-checksum = "sha256:1d14f9b4e295d5d0dc3dd21f5d713359d1148dda72c0edb124f193ebe076fbc9"
     stacks = ["*"]
     uri = "https://download.newrelic.com/php_agent/archive/12.11.0.40/newrelic-php5-12.11.0.40-linux.tar.gz"
     version = "12.11.0"
@@ -83,19 +85,35 @@ api = "0.7"
       uri = "https://docs.newrelic.com/docs/licenses/license-information"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:appdynamics:dotnet-agent:10.55.0:*:*:*:*:*:*:*"]
+    checksum = "sha256:0291c440a8d0b8d675678500575a62503914eddd7e7ec1fae7729cf268215783"
+    cpe = "cpe:2.3:a:appdynamics:dotnet-agent:10.55.0:*:*:*:*:*:*:*"
     id = "new-relic-dotnet"
     name = "New Relic Dotnet Agent"
     purl = "pkg:generic/newrelic-dotnet-agent@10.55.0?arch=amd64"
     sha256 = "0291c440a8d0b8d675678500575a62503914eddd7e7ec1fae7729cf268215783"
     source = "https://github.com/newrelic/newrelic-dotnet-agent/archive/refs/tags/v10.55.0.tar.gz"
-    source-sha256 = "bd60a13cbdc263a16528584e4c3feacf02592697685806fc842d90fa9fefeb4e"
+    source-checksum = "sha256:bd60a13cbdc263a16528584e4c3feacf02592697685806fc842d90fa9fefeb4e"
     stacks = ["*"]
     uri = "https://download.newrelic.com/dot_net_agent/previous_releases/10.55.0/newrelic-dotnet-agent_10.55.0_amd64.tar.gz"
     version = "10.55.0"
 
     [[metadata.dependencies.licenses]]
       uri = "https://docs.newrelic.com/docs/licenses/license-information"
+
+  [[metadata.dependency-constraints]]
+    constraint = "9.*"
+    id = "new-relic-java"
+    patches = 2
+
+  [[metadata.dependency-constraints]]
+    constraint = "12.*"
+    id = "new-relic-php"
+    patches = 2
+
+  [[metadata.dependency-constraints]]
+    constraint = "10.*"
+    id = "new-relic-dotnet"
+    patches = 2
 
 [[stacks]]
   id = "*"

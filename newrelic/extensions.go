@@ -33,8 +33,8 @@ type Extensions struct {
 	Logger                bard.Logger
 }
 
-func NewExtensions(dependency libpak.BuildpackDependency, cache libpak.DependencyCache, configurationResolver libpak.ConfigurationResolver) (Extensions, libcnb.BOMEntry) {
-	contributor, entry := libpak.NewDependencyLayer(dependency, cache, libcnb.LayerTypes{
+func NewExtensions(dependency libpak.BuildpackDependency, cache libpak.DependencyCache, configurationResolver libpak.ConfigurationResolver) (Extensions, libcnb.BOMEntry) { //nolint:staticcheck // hold off on the BOM migration for now
+	contributor, entry := libpak.NewDependencyLayer(dependency, cache, libcnb.LayerTypes{ //nolint:staticcheck // hold off on the BOM migration for now
 		Launch: true,
 	})
 	return Extensions{
@@ -57,7 +57,7 @@ func (e Extensions) Contribute(layer libcnb.Layer) (libcnb.Layer, error) {
 			}
 		}
 
-		if err := crush.ExtractTarGz(artifact, layer.Path, c); err != nil {
+		if err := crush.Extract(artifact, layer.Path, c); err != nil { //nolint:staticcheck // hold off on the BOM migration for now
 			return libcnb.Layer{}, fmt.Errorf("unable to expand extensions\n%w", err)
 		}
 

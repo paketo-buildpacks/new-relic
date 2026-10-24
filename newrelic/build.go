@@ -62,7 +62,7 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 		ja, be := NewJavaAgent(context.Buildpack.Path, dep, dc)
 		ja.Logger = b.Logger
 		result.Layers = append(result.Layers, ja)
-		result.BOM.Entries = append(result.BOM.Entries, be)
+		result.BOM.Entries = append(result.BOM.Entries, be) //nolint:staticcheck // hold off on the BOM migration for now
 
 		if uri, ok := cr.Resolve("BP_NEW_RELIC_EXT_URI"); ok {
 			v, _ := cr.Resolve("BP_NEW_RELIC_EXT_VERSION")
@@ -82,7 +82,7 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 			ec, be := NewExtensions(dep, dc, cr)
 			ec.Logger = b.Logger
 			result.Layers = append(result.Layers, ec)
-			result.BOM.Entries = append(result.BOM.Entries, be)
+			result.BOM.Entries = append(result.BOM.Entries, be) //nolint:staticcheck // hold off on the BOM migration for now
 		}
 	}
 
@@ -105,7 +105,7 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 		pa, be := NewPHPAgent(dep, dc)
 		pa.Logger = b.Logger
 		result.Layers = append(result.Layers, pa)
-		result.BOM.Entries = append(result.BOM.Entries, be)
+		result.BOM.Entries = append(result.BOM.Entries, be) //nolint:staticcheck // hold off on the BOM migration for now
 	}
 
 	if _, ok, err := pr.Resolve("new-relic-dotnet"); err != nil {
@@ -119,13 +119,13 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 		da, be := NewDotnetAgent(dep, dc)
 		da.Logger = b.Logger
 		result.Layers = append(result.Layers, da)
-		result.BOM.Entries = append(result.BOM.Entries, be)
+		result.BOM.Entries = append(result.BOM.Entries, be) //nolint:staticcheck // hold off on the BOM migration for now
 	}
 
-	h, be := libpak.NewHelperLayer(context.Buildpack, "properties")
+	h, be := libpak.NewHelperLayer(context.Buildpack, "properties") //nolint:staticcheck // hold off on the BOM migration for now
 	h.Logger = b.Logger
 	result.Layers = append(result.Layers, h)
-	result.BOM.Entries = append(result.BOM.Entries, be)
+	result.BOM.Entries = append(result.BOM.Entries, be) //nolint:staticcheck // hold off on the BOM migration for now
 
 	return result, nil
 }
