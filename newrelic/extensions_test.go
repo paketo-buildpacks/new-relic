@@ -17,8 +17,7 @@
 package newrelic_test
 
 import (
-	"fmt"
-	"io/ioutil"
+	"fmt" //nolint:staticcheck // hold off on the BOM migration for now
 	"os"
 	"path/filepath"
 	"testing"
@@ -41,7 +40,7 @@ func testExtensions(t *testing.T, context spec.G, it spec.S) {
 	it.Before(func() {
 		var err error
 
-		ctx.Layers.Path, err = ioutil.TempDir("", "properties-layers")
+		ctx.Layers.Path, err = os.MkdirTemp("", "properties-layers")
 		Expect(err).NotTo(HaveOccurred())
 	})
 

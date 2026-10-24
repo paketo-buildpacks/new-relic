@@ -61,9 +61,9 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		Expect(result.Layers[1].Name()).To(Equal("helper"))
 		Expect(result.Layers[1].(libpak.HelperLayerContributor).Names).To(Equal([]string{"properties"}))
 
-		Expect(result.BOM.Entries).To(HaveLen(2))
-		Expect(result.BOM.Entries[0].Name).To(Equal("new-relic-java"))
-		Expect(result.BOM.Entries[1].Name).To(Equal("helper"))
+		Expect(result.BOM.Entries).To(HaveLen(2))                      //nolint:staticcheck // hold off on the BOM migration for now
+		Expect(result.BOM.Entries[0].Name).To(Equal("new-relic-java")) //nolint:staticcheck // hold off on the BOM migration for now
+		Expect(result.BOM.Entries[1].Name).To(Equal("helper"))         //nolint:staticcheck // hold off on the BOM migration for now
 	})
 
 	it("contributes Java agent API >= 0.7", func() {
@@ -90,9 +90,9 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		Expect(result.Layers[1].Name()).To(Equal("helper"))
 		Expect(result.Layers[1].(libpak.HelperLayerContributor).Names).To(Equal([]string{"properties"}))
 
-		Expect(result.BOM.Entries).To(HaveLen(2))
-		Expect(result.BOM.Entries[0].Name).To(Equal("new-relic-java"))
-		Expect(result.BOM.Entries[1].Name).To(Equal("helper"))
+		Expect(result.BOM.Entries).To(HaveLen(2))                      //nolint:staticcheck // hold off on the BOM migration for now
+		Expect(result.BOM.Entries[0].Name).To(Equal("new-relic-java")) //nolint:staticcheck // hold off on the BOM migration for now
+		Expect(result.BOM.Entries[1].Name).To(Equal("helper"))         //nolint:staticcheck // hold off on the BOM migration for now
 	})
 
 	context("$BP_NEW_RELIC_EXT_URI", func() {
@@ -136,10 +136,10 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 				PURL:    "pkg:generic/newrelic-external-configuration@test-version",
 			}))
 
-			Expect(result.BOM.Entries).To(HaveLen(3))
-			Expect(result.BOM.Entries[0].Name).To(Equal("new-relic-java"))
-			Expect(result.BOM.Entries[1].Name).To(Equal("new-relic-extensions"))
-			Expect(result.BOM.Entries[2].Name).To(Equal("helper"))
+			Expect(result.BOM.Entries).To(HaveLen(3))                            //nolint:staticcheck // hold off on the BOM migration for now
+			Expect(result.BOM.Entries[0].Name).To(Equal("new-relic-java"))       //nolint:staticcheck // hold off on the BOM migration for now
+			Expect(result.BOM.Entries[1].Name).To(Equal("new-relic-extensions")) //nolint:staticcheck // hold off on the BOM migration for now
+			Expect(result.BOM.Entries[2].Name).To(Equal("helper"))               //nolint:staticcheck // hold off on the BOM migration for now
 		})
 
 		it("contributes extensions when $BP_NEW_RELIC_EXT_URI is set API >= 0.7", func() {
@@ -172,10 +172,10 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 				PURL:    "pkg:generic/newrelic-external-configuration@test-version",
 			}))
 
-			Expect(result.BOM.Entries).To(HaveLen(3))
-			Expect(result.BOM.Entries[0].Name).To(Equal("new-relic-java"))
-			Expect(result.BOM.Entries[1].Name).To(Equal("new-relic-extensions"))
-			Expect(result.BOM.Entries[2].Name).To(Equal("helper"))
+			Expect(result.BOM.Entries).To(HaveLen(3))                            //nolint:staticcheck // hold off on the BOM migration for now
+			Expect(result.BOM.Entries[0].Name).To(Equal("new-relic-java"))       //nolint:staticcheck // hold off on the BOM migration for now
+			Expect(result.BOM.Entries[1].Name).To(Equal("new-relic-extensions")) //nolint:staticcheck // hold off on the BOM migration for now
+			Expect(result.BOM.Entries[2].Name).To(Equal("helper"))               //nolint:staticcheck // hold off on the BOM migration for now
 		})
 	})
 
@@ -201,9 +201,9 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		Expect(result.Layers[1].Name()).To(Equal("helper"))
 		Expect(result.Layers[1].(libpak.HelperLayerContributor).Names).To(Equal([]string{"properties"}))
 
-		Expect(result.BOM.Entries).To(HaveLen(2))
-		Expect(result.BOM.Entries[0].Name).To(Equal("new-relic-php"))
-		Expect(result.BOM.Entries[1].Name).To(Equal("helper"))
+		Expect(result.BOM.Entries).To(HaveLen(2))                     //nolint:staticcheck // hold off on the BOM migration for now
+		Expect(result.BOM.Entries[0].Name).To(Equal("new-relic-php")) //nolint:staticcheck // hold off on the BOM migration for now
+		Expect(result.BOM.Entries[1].Name).To(Equal("helper"))        //nolint:staticcheck // hold off on the BOM migration for now
 	})
 
 	it("contributes PHP agent API >= 0.7", func() {
@@ -230,9 +230,9 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		Expect(result.Layers[1].Name()).To(Equal("helper"))
 		Expect(result.Layers[1].(libpak.HelperLayerContributor).Names).To(Equal([]string{"properties"}))
 
-		Expect(result.BOM.Entries).To(HaveLen(2))
-		Expect(result.BOM.Entries[0].Name).To(Equal("new-relic-php"))
-		Expect(result.BOM.Entries[1].Name).To(Equal("helper"))
+		Expect(result.BOM.Entries).To(HaveLen(2))                     //nolint:staticcheck // hold off on the BOM migration for now
+		Expect(result.BOM.Entries[0].Name).To(Equal("new-relic-php")) //nolint:staticcheck // hold off on the BOM migration for now
+		Expect(result.BOM.Entries[1].Name).To(Equal("helper"))        //nolint:staticcheck // hold off on the BOM migration for now
 	})
 
 	it("contributes Python agent API >= 0.7", func() {
