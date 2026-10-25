@@ -17,7 +17,7 @@
 package newrelic_test
 
 import (
-	"io/ioutil"
+	//nolint:staticcheck // hold off on the BOM migration for now
 	"os"
 	"path/filepath"
 	"testing"
@@ -40,7 +40,7 @@ func testDotnetAgent(t *testing.T, context spec.G, it spec.S) {
 	it.Before(func() {
 		var err error
 
-		ctx.Layers.Path, err = ioutil.TempDir("", "dotnet-agent-layers")
+		ctx.Layers.Path, err = os.MkdirTemp("", "dotnet-agent-layers")
 		Expect(err).NotTo(HaveOccurred())
 	})
 
@@ -64,7 +64,7 @@ func testDotnetAgent(t *testing.T, context spec.G, it spec.S) {
 
 		Expect(layer.Launch).To(BeTrue())
 		Expect(filepath.Join(layer.Path, "fixture-marker")).To(BeARegularFile())
-		
+
 		Expect(layer.LaunchEnvironment["CORECLR_ENABLE_PROFILING.default"]).To(Equal("1"))
 		Expect(layer.LaunchEnvironment["CORECLR_NEWRELIC_HOME.default"]).To(Equal(filepath.Join(layer.Path)))
 		Expect(layer.LaunchEnvironment["CORECLR_PROFILER.default"]).To(Equal("{36032161-FFC0-4B61-B559-F6C5D41BAE5A}"))

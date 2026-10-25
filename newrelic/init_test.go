@@ -27,6 +27,7 @@ func TestUnit(t *testing.T) {
 	suite := spec.New("newrelic", spec.Report(report.Terminal{}))
 	suite("Build", testBuild)
 	suite("Detect", testDetect)
+	suite("DotnetAgent", testDotnetAgent)
 	suite("Extensions", testExtensions)
 	suite("JavaAgent", testJavaAgent)
 	suite("PHPAgent", testPHPAgent)
